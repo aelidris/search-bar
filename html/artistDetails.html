@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/artistDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 class="header">Artist Details</h1>
+    <div class="container">
+        <div class="artistInfo">
+            <img src="{{.Image}}" alt="{{.Image}}">
+            <div class="info">
+                <div>
+                    <strong>Name:</strong>
+                    <h4>{{.Name}}</h4>
+                </div>
+                <div>
+                    <strong>Members:</strong>
+                    <section>
+                        <ul>
+                            {{range .Members}}
+                            <li>{{.}}</li>
+                            {{end}}
+                        </ul>
+                    </section>
+                </div>
+                <div>
+                    <strong>Creation Date:</strong>
+                    <h4>{{.CreationDate}}</h4>
+                </div>
+                <div>
+                    <strong>First Album:</strong>
+                    <h4>{{.FirstAlbum}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="artistDetails">
+            <div class="location" id="locationParent">
+                <h1>Locations</h1>
+                <div id="location">{{.Locations}}</div>
+            </div>
+            <div class="location" id="dateParent">
+                <h1>Dates</h1>
+                <div id="date">{{.ConcertDates}}</div>
+            </div>
+            <div class="location" id="relationParent">
+                <h1>Relations</h1>
+                <div id="relation">{{.Relations}}</div>
+            </div>
+
+        </div>
+        
+        <div class="btn"><button>
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Go Back</span>
+        </button>
+    </div>
+    </div>
+    <script src="../static/js/artistDetails.js"></script>
+</body>
+</html>

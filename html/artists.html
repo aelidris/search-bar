@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/artists.css">
+
+</head>
+<body>
+    <h1>Groupie Tracker</h1>
+    <div class="search-suggestion">
+        <div class="searchBar">
+            <input type="text" id="search" placeholder="type a text">
+        </div>
+        <div class="boxSuggestion">
+            
+        </div>
+    </div>
+    <div class="artist">
+        {{range .}}
+        <div class="artistCard" id="{{.Id}}">
+            <img src="{{.Image}}" alt="{{.Image}}" loading="lazy">
+            <div class="name">{{.Name}}</div>
+        </div>
+        {{end}}
+    </div>
+
+    <script src="../static/js/artists.js">
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body .header{
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+    background: rgb(12, 12, 12);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-family: 'Roboto Mono', serif;
+}
+.container {
+    background: rgb(43, 40, 40);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+.container .artistInfo {
+    /* background: red; */
+    display: flex;
+    /* height: 400px; */
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    gap: 20px;
+}
+/* .container .artistInfo .info  div {
+    background: red;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+} */
+.container .artistInfo img {
+    height: calc(100% - 100px);
+    border-radius: 50%;
+    width: 300px;
+    margin-bottom: 60px;
+    border: 2px solid white;
+    animation: rotateTwice 2s ease-in-out alternate;
+    /* object-fit: cover; */
+}
+.container .artistInfo .info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* background: green; */
+    font-size: 24px;
+    color: white;
+    font-family: 'Roboto Mono', serif;
+}
+.container .artistInfo .info div {
+    padding: 30px 50px;
+    background: rgb(106, 107, 106);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid whitesmoke;
+    /* width: calc(1); */
+    /* background: red; */
+}
+.container .artistInfo .info div strong{
+    color: black;
+    margin-bottom: 10px;
+    display: block;
+}
+.container .artistDetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    /* z-index: 10; */
+}
+.container .artistDetails .location {
+    width: 400px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /* z-index: -10; */
+}
+.container .artistDetails .location h1{
+    background: rgb(22, 22, 22);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+
+}
+.container .artistDetails .location ul {
+    background: rgba(243, 240, 240, 0.973);
+    width: 100%;
+    text-align: center;
+    list-style: none;
+}
+.container .artistDetails .location ul li {
+    padding: 10px 0;
+    font-size: 22px;
+    /* position: relative; */
+    font-family: 'Roboto Mono', serif;
+}
+.container .artistDetails .location ul li:nth-of-type(even) {
+    background: rgb(106, 107, 106);
+    color: white;
+}
+.container .artistDetails .location ul li:nth-of-type(odd) {
+    background: white;
+    color: rgb(106, 107, 106);
+}
+/* .container .artistDetails .location:not(:last-of-type) ul li::before {
+    content: '✔';
+    position: absolute;
+    left: calc(15%);
+} */
+
+.container .artistDetails #relationParent div.cityDate .city {
+    background: rgb(106, 107, 106);
+    color: white;
+    padding: 10px 0;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Roboto Mono', serif;
+}
+.container .btn{
+    /* background: red; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container .btn button{
+    padding: 15px  30px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+    font-family: 'Roboto Mono', serif;
+    transition: all 0.8s ease;
+}
+.container .btn button i {
+    /* background: red; */
+    font-size: 20px;
+    margin-right: 5px;
+    /* width: 20px; */
+}
+.container .btn button:hover{
+    border: 2px solid black;
+    color: black;
+    background: rgb(243, 242, 242);
+}
+
+@keyframes rotateTwice {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(720deg);
+    }
+    100% {
+        transform: rotate(0deg); /* 2 full rotations */
+    }
+}
