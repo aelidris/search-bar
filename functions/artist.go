@@ -179,9 +179,10 @@ func ErrorPage(w http.ResponseWriter, statusCode int, message string) {
 	}
 	tmpl, err := template.ParseFiles("./html/error.html")
 	if err != nil {
-		fmt.Println("Error: loading error page")
+		http.Error(w, "Error: loading error page", http.StatusInternalServerError)
 		return
 	}
+	
 	w.WriteHeader(statusCode)
 	err = tmpl.Execute(w, errorData)
 	if err != nil {
