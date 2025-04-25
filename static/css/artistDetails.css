@@ -23,9 +23,7 @@ body .header{
     margin-top: 80px;
 }
 .container .artistInfo {
-    /* background: red; */
     display: flex;
-    /* height: 400px; */
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
@@ -33,12 +31,8 @@ body .header{
     padding-top: 30px;
     gap: 20px;
 }
-/* .container .artistInfo .info  div {
-    background: red;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 10px;
-} */
+
+
 .container .artistInfo img {
     height: calc(100% - 100px);
     border-radius: 50%;
@@ -46,13 +40,11 @@ body .header{
     margin-bottom: 60px;
     border: 2px solid white;
     animation: rotateTwice 2s ease-in-out alternate;
-    /* object-fit: cover; */
 }
 .container .artistInfo .info {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* background: green; */
     font-size: 24px;
     color: white;
     font-family: 'Roboto Mono', serif;
@@ -65,9 +57,8 @@ body .header{
     margin-bottom: 10px;
     border-radius: 10px;
     border: 2px solid whitesmoke;
-    /* width: calc(1); */
-    /* background: red; */
 }
+
 .container .artistInfo .info div strong{
     color: black;
     margin-bottom: 10px;
@@ -79,13 +70,11 @@ body .header{
     gap: 10px;
     justify-content: space-evenly;
     margin-top: 100px;
-    /* z-index: 10; */
 }
 .container .artistDetails .location {
     width: 400px;
     border-radius: 10px;
     margin-bottom: 20px;
-    /* z-index: -10; */
 }
 .container .artistDetails .location h1{
     background: rgb(22, 22, 22);
@@ -104,22 +93,19 @@ body .header{
 .container .artistDetails .location ul li {
     padding: 10px 0;
     font-size: 22px;
-    /* position: relative; */
     font-family: 'Roboto Mono', serif;
 }
+
 .container .artistDetails .location ul li:nth-of-type(even) {
     background: rgb(106, 107, 106);
     color: white;
 }
+
 .container .artistDetails .location ul li:nth-of-type(odd) {
     background: white;
     color: rgb(106, 107, 106);
 }
-/* .container .artistDetails .location:not(:last-of-type) ul li::before {
-    content: '✔';
-    position: absolute;
-    left: calc(15%);
-} */
+
 
 .container .artistDetails #relationParent div.cityDate .city {
     background: rgb(106, 107, 106);
@@ -130,7 +116,6 @@ body .header{
     font-family: 'Roboto Mono', serif;
 }
 .container .btn{
-    /* background: red; */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -148,10 +133,8 @@ body .header{
     transition: all 0.8s ease;
 }
 .container .btn button i {
-    /* background: red; */
     font-size: 20px;
     margin-right: 5px;
-    /* width: 20px; */
 }
 .container .btn button:hover{
     border: 2px solid black;
@@ -167,6 +150,6 @@ body .header{
         transform: rotate(720deg);
     }
     100% {
-        transform: rotate(0deg); /* 2 full rotations */
+        transform: rotate(0deg); 
     }
 }

@@ -22,9 +22,6 @@ locationDiv.textContent = ''
 locationParent.appendChild(ulLocation)
 
 
-
-// console.log(dateElement)
-
 const ulDate = document.createElement('ul')
 dateElement.forEach(date => {
     const liDate = document.createElement('li')
@@ -59,8 +56,6 @@ for ([city, dateCity] of Object.entries(data)) {
     relationParent.appendChild(div)
 }
 relationDiv.textContent = ''
-// relationParent.appendChild(ulRelation)
-// console.log(relationElement)
 
 goBack.addEventListener('click', () => {
     window.location.href = '/'

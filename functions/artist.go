@@ -40,7 +40,6 @@ func Artists(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// Add this function to your `functions` package
 func GetArtistsData(w http.ResponseWriter, r *http.Request) {
 	content, err := GetContent(w, artistAPI, "")
 	if err != nil {
@@ -52,17 +51,14 @@ func GetArtistsData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var wg sync.WaitGroup
-	wg.Add(len(artist)) // Add the number of artists to the WaitGroup
+	wg.Add(len(artist))
 
-	// Use a mutex to safely update the artist slice concurrently
 	var mu sync.Mutex
 
-	// Fetch location data for each artist concurrently
 	for i := 0; i < len(artist); i++ {
 		go func(i int) {
-			defer wg.Done() // Mark the goroutine as done when it finishes
+			defer wg.Done() 
 
-			// Make sure we're accessing a valid index
 			if i >= 0 && i < len(artist) {
 				contentLocation, err := GetContent(w, locationAPI, strconv.Itoa(i+1))
 				if err != nil {
@@ -70,14 +66,13 @@ func GetArtistsData(w http.ResponseWriter, r *http.Request) {
 					return
 				}
 				if contentLocation == nil {
-					return // If GetContent fails, it will already call http.Error
+					return 
 				}
 				if err := json.Unmarshal(contentLocation, &location); err != nil {
 					fmt.Println("Error unmarshaling location data:", err)
 					return
 				}
 
-				// Safely update the artist slice
 				mu.Lock()
 				if artist[i].Id == location.Id {
 					artist[i].Locations = strings.Join(location.Locations, " ")
@@ -87,9 +82,7 @@ func GetArtistsData(w http.ResponseWriter, r *http.Request) {
 		}(i)
 	}
 
-	// Wait for all goroutines to finish
 	wg.Wait()
-	// Manually write JSON response
 	jsonData, err := json.Marshal(artist)
 	if err != nil {
 		ErrorPage(w, http.StatusInternalServerError, "Internal Server Error")
@@ -155,7 +148,6 @@ func ArtistDetails(w http.ResponseWriter, r *http.Request) {
 	}
 	artist[id-1].Locations = location.Locations
 	artist[id-1].ConcertDates = strings.Join(date.Dates, " ")
-	// artist[id-1].RelationsMap = relation.Relations
 	artist[id-1].Relations = relation.Relations
 
 	err = tmp.Execute(w, artist[id-1])
@@ -190,7 +182,6 @@ func ErrorPage(w http.ResponseWriter, statusCode int, message string) {
 		fmt.Println("Error: loading error page")
 		return
 	}
-	// This position of WriteHeader ensures the program only writes to the header once when the error template doesn't exist.
 	w.WriteHeader(statusCode)
 	err = tmpl.Execute(w, errorData)
 	if err != nil {
